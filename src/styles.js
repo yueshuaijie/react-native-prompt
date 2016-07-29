@@ -15,7 +15,7 @@ export default StyleSheet.create({
   },
   dialogContent: {
     elevation: 5,
-    marginTop: 150,
+    marginTop: 100,
     width: 300,
     backgroundColor: 'white',
     borderRadius: 5,
