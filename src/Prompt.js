@@ -83,6 +83,10 @@ export default class Prompt extends Component {
     this.setState({visible: false});
   };
 
+  onShow = () => {
+    this.refs.textInput.focus();
+  };
+
   _renderDialog = () => {
     const {
       title,
@@ -116,7 +120,8 @@ export default class Prompt extends Component {
               defaultValue={defaultValue}
               onChangeText={this._onChangeText}
               placeholder={placeholder}
-              autoFocus={true}
+              //autoFocus={true}
+              ref='textInput'
               underlineColorAndroid="white"
               {...this.props.textInputProps} />
           </View>
@@ -143,7 +148,7 @@ export default class Prompt extends Component {
 
   render() {
     return (
-      <Modal onRequestClose={() => this.close()} transparent={true} visible={this.props.visible}>
+      <Modal onRequestClose={() => this.close()} transparent={true} visible={this.props.visible} onShow={this.onShow}>
         {this._renderDialog()}
       </Modal>
     );
